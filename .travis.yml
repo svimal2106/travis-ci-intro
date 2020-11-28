@@ -18,5 +18,6 @@ script:
   - docker tag travis-ci-intro svimal2106/travis-ci-intro
 
 after_success:
+  - echo "Docker password is $DOCKER_PASSWORD"
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push svimal2106/travis-ci-intro
