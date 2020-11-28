@@ -1,4 +1,22 @@
 language: node_js
 
-before_install:
-  - echo "Nothing to do before install"
+node_js:
+  - 13
+
+services:
+  - docker
+
+install:
+  - echo "No installation is needed"
+
+before_script:
+  - echo "No tests"
+
+script:
+  - docker --version
+  - docker build -t travis-ci-intro .
+  - docker tag travis-ci-intro svimal2106/travis-ci-intro
+
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push svimal2106/travis-ci-intro
