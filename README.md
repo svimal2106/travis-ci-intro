@@ -1,13 +1,10 @@
 # Overview
 This is a very simple project to demonstrate CI using Travis 
 
-# Local Setup
-* Install dependencies: `npm install`
-* Run server: `node server.js`
-
-# Container Setup
-* Build image: `docker build .`
-* Run container with image: `docker run {image_id}` where `image_id` can be retrieved by running `docker images` and found under the column `IMAGE ID`
-
-# Container teardown
-* Remove container: `docker kill {container_id}` where `container_id` can be retrieved by running `docker ps` and found under the column `CONTAINER ID`
+# Setup
+1) Add file .travis.yml
+2) Commit changes to local repo
+3) Push changes to github repo
+4) Connect the repo with Travis
+5) Make another test commit
+6) Check Travis CI console for build logs
